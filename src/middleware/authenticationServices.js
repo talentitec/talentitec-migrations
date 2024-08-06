@@ -1,6 +1,6 @@
 module.exports = async (req, res, next) => {
 
-    const authorization = process.env.AUTHORIZATION_SERVICE
+    const authorization = process.env.AUTHORIZATION_SERVICE_MIGRATION
 
     const authHeader = req.headers.authorization;
 

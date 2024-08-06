@@ -2,19 +2,20 @@ const express = require('express');
 const routes = express.Router();
 
 // Importando Controllers
-const Example = require('./src/controller/exampleController');
+const MigrationWayWork = require('./src/controller/migrationWayWorkController');
+const MigrationGender = require('./src/controller/migrationGenderController');
+const MigrationLanguage = require('./src/controller/migrationLanguageController');
+
 
 // Importando Middlewares
-const ValidateTokenMiddleware = require('./src/middleware/validateTokenMiddleware');
+const AuthenticationServices = require('./src/middleware/authenticationServices');
 
 // Middlewares coletico
-routes.use(ValidateTokenMiddleware);
+routes.use(AuthenticationServices);
 
 // Routes
-routes.post('/example', Example.store);
-routes.delete('/example/:id', Example.destroy);
-routes.put('/example/:id', Example.update);
-routes.get('/example/:id', Example.show);
-routes.get('/example', Example.index);
+routes.post('/migration_way_work', MigrationWayWork.store);
+routes.post('/migration_gender', MigrationGender.store);
+routes.post('/migration_language', MigrationLanguage.store);
 
 module.exports = routes;
