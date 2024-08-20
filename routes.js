@@ -5,6 +5,7 @@ const routes = express.Router();
 const MigrationWayWork = require('./src/controller/migrationWayWorkController');
 const MigrationGender = require('./src/controller/migrationGenderController');
 const MigrationLanguage = require('./src/controller/migrationLanguageController');
+const Logout = require('./src/controller/logoutController');
 
 
 // Importando Middlewares
@@ -17,5 +18,6 @@ routes.use(AuthenticationServices);
 routes.post('/migration_way_work', MigrationWayWork.store);
 routes.post('/migration_gender', MigrationGender.store);
 routes.post('/migration_language', MigrationLanguage.store);
+routes.put('/logout', Logout.update);
 
 module.exports = routes;
