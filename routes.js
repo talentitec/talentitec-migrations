@@ -2,10 +2,10 @@ const express = require('express');
 const routes = express.Router();
 
 // Importando Controllers
-const MigrationWayWork = require('./src/controller/migrationWayWorkController');
-const MigrationGender = require('./src/controller/migrationGenderController');
-const MigrationLanguage = require('./src/controller/migrationLanguageController');
 const Logout = require('./src/controller/logoutController');
+const MigrationRecruitment = require('./src/controller/migrationRecruitmentController');
+const Feed = require('./src/controller/migrrationFeedController');
+const Birthday = require('./src/controller/migrationBirthday');
 
 
 // Importando Middlewares
@@ -15,9 +15,7 @@ const AuthenticationServices = require('./src/middleware/authenticationServices'
 routes.use(AuthenticationServices);
 
 // Routes
-routes.post('/migration_way_work', MigrationWayWork.store);
-routes.post('/migration_gender', MigrationGender.store);
-routes.post('/migration_language', MigrationLanguage.store);
-routes.put('/logout', Logout.update);
+// routes.put('/logout', Logout.update);
+routes.post('/birthday_migration', Birthday.store);
 
 module.exports = routes;
